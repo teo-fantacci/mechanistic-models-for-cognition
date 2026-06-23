@@ -2,7 +2,7 @@
 
 This folder contains five Jupyter notebooks that accompany **Figure 3** of:
 
-> Froudist-Walsh S, Ivanov TG, Magrou L, Cho H, Busch AN, Muller LE, et al. (in press): Mechanistic computational models of cognition across scales and species.
+> Froudist-Walsh S, Ivanov TG, Magrou L, Cho H, Busch AN, Muller LE, et al. (in press): Mechanistic computational models of cognition across scales and species. *Biol Psychiatry*.
 
 The review traces how a single recurrent-network building block — the Wong & Wang
 (2006) two-population decision module — can be extended into mechanistic models
@@ -41,19 +41,42 @@ is, and is not" section.
 
 ## Running
 
-The notebooks require only `numpy` and `matplotlib`. They run in:
+The notebooks require only `numpy` and `matplotlib`; the **interactive demos**
+additionally use `ipywidgets`, which the notebooks **install automatically** the
+first time you run a widget cell (no terminal step needed). They run in:
 
 - **Google Colab** (recommended for first-time use — no install needed)
 - **Local Jupyter** with Python ≥ 3.8
 
 ```bash
-pip install numpy matplotlib jupyter
+pip install numpy matplotlib ipywidgets jupyter
 jupyter notebook
 ```
 
 No external data files are needed; all simulations are generated at runtime.
 Results are written to a `saved_results/` subfolder (path configurable in each
-notebook's setup cell).
+notebook's setup cell). The interactive widgets render their figures inline and
+do **not** write files.
+
+## Interactive demos
+
+Four of the notebooks (all except the multisensory one) end with **interactive
+`ipywidgets` panels** for teaching. Each follows a **predict → run → reveal**
+rhythm: a short *Predict* prompt poses a question, you explore with a couple of
+dropdowns/sliders, then a *Reveal* cell **just below the widget** explains what
+you saw. Defaults reproduce the canonical result, so a learner who changes
+nothing still sees the calibrated behaviour, and the widgets only expose
+parameters that already exist in each model — **no equations are changed**.
+
+| Notebook | Interactive panels (knobs) |
+|---|---|
+| [`perceptual_decision_making.ipynb`](perceptual_decision_making.ipynb) | **Coherence** (0 % = noise decides) · **NMDA τ** (evidence-accumulation timescale) · **random seed** |
+| [`working_memory_items.ipynb`](working_memory_items.ipynb) | **What holds a memory?** — neuromodulation `m` × recurrent excitation |
+| [`conscious_access.ipynb`](conscious_access.ipynb) | **Hunt the ignition threshold** — stimulus strength × seed (all-or-none bifurcation). **What conscious access needs** — feedforward AMPA × frontoparietal recurrency |
+| [`working_memory_for_spatial_location.ipynb`](working_memory_for_spatial_location.ipynb) | **When does a bump exist?** — recurrent strength `GEE` × footprint `kappa`. **Form, persist, diffuse** — cue angle × noise `sigE` (memory precision) |
+
+If `ipywidgets` cannot be installed (e.g. no internet), the static figures above
+each widget still convey the same result; only the sliders are skipped.
 
 ## What each notebook contains
 
@@ -69,7 +92,9 @@ A consistent structure across all five:
 4. **Parameters dict** — the knobs most worth varying.
 5. **Connectivity, f-I curves, simulation core** — the actual code.
 6. **Quick sanity checks** — reproducibility tests + key invariants.
-7. **Biological context** — what the model represents in the brain, what it
+7. **Interactive demos** *(all notebooks except the multisensory one)* —
+   `ipywidgets` panels in a predict → run → reveal layout (see above).
+8. **Biological context** — what the model represents in the brain, what it
    *can* explain, and what it *cannot*.
 
 ## Citing
