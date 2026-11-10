@@ -2,7 +2,7 @@
 
 This folder contains five Jupyter notebooks that accompany **Figure 3** of:
 
-> Froudist-Walsh S, Ivanov TG, Magrou L, Cho H, Busch AN, Muller LE, et al. (in press): Mechanistic computational models of cognition across scales and species.
+> Froudist-Walsh S, Ivanov TG, Fantacci T, Magrou L, Cho H, Russo E, et al. (2026): Mechanistic computational models of cognition across scales and species. *Biol Psychiatry*. https://doi.org/10.1016/j.biopsych.2026.08.017
 
 The review traces how a single recurrent-network building block — the Wong & Wang
 (2006) two-population decision module — can be extended into mechanistic models
