@@ -1,0 +1,4 @@
+# The notebooks import only NumPy, Matplotlib and the standard library.
+numpy
+matplotlib
+jupyter
